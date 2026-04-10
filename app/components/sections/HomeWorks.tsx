@@ -23,7 +23,7 @@ export function HomeWorks() {
     // 2. Fetching from your API
     const fetchWorks = async () => {
       try {
-        const res = await fetch(`http://127.0.0.1:8000/api/list_work/`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/list_work/`);
         if (!res.ok) throw new Error('Failed to fetch');
         const data = await res.json();
         setWorks(data);
