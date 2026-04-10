@@ -31,7 +31,7 @@ export default function WorkDetailPage() {
     const fetchWorkDetail = async () => {
       try {
         // Fetching from your specific Detail Endpoint
-        const res = await fetch(`http://127.0.0.1:8000/api/detail_list_work/${id}/`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/detail_list_work/${id}/`);
         
         if (!res.ok) throw new Error('Project not found');
         

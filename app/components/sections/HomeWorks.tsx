@@ -38,7 +38,7 @@ export function HomeWorks() {
   }, []);
 
   if (loading) return <div className="p-20 text-center text-blue-400">Loading Projects...</div>;
-  const baseurl = 'http://127.0.0.1:8000/';
+  const baseurl = `${process.env.NEXT_PUBLIC_API_URL}`;
   const image_url = `${baseurl}${works[0]?.thumbnail}` || null;
   return (
     <section className="relative w-full py-20 px-6 bg-[#0A0A10]">
