@@ -24,7 +24,7 @@ export function HomeTeam() {
     const fetchTeam = async () => {
       try {
         // Fetch from your Developer App endpoint
-        const res = await fetch('http://127.0.0.1:8000/api/list_developers/');
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/list_developers/`);
         if (res.ok) {
           setTeam(await res.json());
         }

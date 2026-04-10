@@ -28,7 +28,7 @@ export function HomeAbout() {
     // 1. FETCH INFO: Added '/about/' to the URL
     const fetchInfo = async () => {
       try {
-        const res = await fetch('http://127.0.0.1:8000/api/info/');
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/info`);
         if (res.ok) {
           const data = await res.json();
           if (data.length > 0) setInfo(data[0]);
