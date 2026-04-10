@@ -41,7 +41,7 @@ export function HomeAbout() {
     // 2. FETCH SKILLS: Added '/about/' to the URL
     const fetchSkills = async () => {
       try {
-        const res = await fetch('http://127.0.0.1:8000/api/skills/');
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/skills/`);
         if (res.ok) {
            setSkills(await res.json());
         } else {
